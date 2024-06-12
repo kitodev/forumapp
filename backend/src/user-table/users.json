@@ -1,0 +1,102 @@
+[
+  {
+    "attributes": [
+      {
+        "key": "email",
+        "type": "STRING",
+        "value": "dyn@ati.com"
+      },
+      {
+        "key": "name",
+        "type": "STRING",
+        "value": "Dyn Ati"
+      },
+      {
+        "key": "userId",
+        "type": "NUMBER",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "attributes": [
+      {
+        "key": "email",
+        "type": "STRING",
+        "value": "valid@email.com"
+      },
+      {
+        "key": "name",
+        "type": "STRING",
+        "value": "Some Body"
+      },
+      {
+        "key": "userId",
+        "type": "NUMBER",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "attributes": [
+      {
+        "key": "email",
+        "type": "STRING",
+        "value": "user@user.com"
+      },
+      {
+        "key": "name",
+        "type": "STRING",
+        "value": "Test User"
+      },
+      {
+        "key": "userId",
+        "type": "NUMBER",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "attributes": [
+      {
+        "key": "city",
+        "type": "STRING",
+        "value": "Debrecen"
+      },
+      {
+        "key": "email",
+        "type": "STRING",
+        "value": "jozsi@boy.com"
+      },
+      {
+        "key": "name",
+        "type": "STRING",
+        "value": "Jozsika"
+      },
+      {
+        "key": "userId",
+        "type": "NUMBER",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "attributes": [
+      {
+        "key": "email",
+        "type": "STRING",
+        "value": "turtle73@gmail.com"
+      },
+      {
+        "key": "name",
+        "type": "STRING",
+        "value": "turtle73"
+      },
+      {
+        "key": "userId",
+        "type": "NUMBER",
+        "value": 4
+      }
+    ]
+  }
+]

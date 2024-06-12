@@ -1,0 +1,292 @@
+[
+  {
+    "id": 0,
+    "author": {
+      "id": 0,
+      "name": "admin",
+      "email": "admin@admin.com",
+      "role": 0
+    },
+    "title": "Hello World",
+    "body": "Enjoy the forum!",
+    "comments": []
+  },
+  {
+    "id": 1,
+    "author": {
+      "id": 2,
+      "name": "jozsi",
+      "email": "jozsef@freemail.hu",
+      "role": 1
+    },
+    "title": "What's up?!",
+    "body": "This is my first topic!",
+    "comments": [
+      {
+        "id": 0,
+        "body": "first",
+        "author": {
+          "id": 8,
+          "name": "turtle73",
+          "email": "turtle73@gmail.com",
+          "role": 2
+        },
+        "comments": [
+          {
+            "id": 1,
+            "body": "clap, clap",
+            "author": {
+              "id": 6,
+              "name": "gordon",
+              "email": "freeman@freemail.hu",
+              "role": 1
+            },
+            "comments": []
+          },
+          {
+            "id": 2,
+            "body": "IQ 30",
+            "author": {
+              "id": 7,
+              "name": "nyanCat",
+              "email": "nyannyan@gmail.com",
+              "role": 2
+            },
+            "comments": [
+              {
+                "id": 3,
+                "body": "better than yours",
+                "author": {
+                  "id": 8,
+                  "name": "turtle73",
+                  "email": "turtle73@gmail.com",
+                  "role": 2
+                },
+                "comments": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "author": {
+      "id": 7,
+      "name": "nyanCat",
+      "email": "nyannyan@gmail.com",
+      "role": 2
+    },
+    "title": "Dogs",
+    "body": "I like dogs! Do you have any animal?",
+    "comments": [
+      {
+        "id": 0,
+        "body": "I have a dog, too.",
+        "author": {
+          "id": 3,
+          "name": "aNN6j73",
+          "email": "zero@gmail.com",
+          "role": 3
+        },
+        "comments": []
+      },
+      {
+        "id": 1,
+        "body": "I have 2 cats and a fish.",
+        "author": {
+          "id": 6,
+          "name": "gordon",
+          "email": "freeman@freemail.hu",
+          "role": 1
+        },
+        "comments": []
+      },
+      {
+        "id": 2,
+        "body": "I have a tarantula.",
+        "author": {
+          "id": 2,
+          "name": "jozsi",
+          "email": "jozsef@freemail.hu",
+          "role": 1
+        },
+        "comments": [
+          {
+            "id": 3,
+            "body": "It is disgusting!!!4!!444",
+            "author": {
+              "id": 1,
+              "name": "spy007",
+              "email": "spy@seven.com",
+              "role": 1
+            },
+            "comments": []
+          },
+          {
+            "id": 4,
+            "body": "I have a tarantula, too!",
+            "author": {
+              "id": 0,
+              "name": "admin",
+              "email": "admin@admin.com",
+              "role": 0
+            },
+            "comments": []
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "body": "I hate animals.",
+        "author": {
+          "id": 8,
+          "name": "turtle73",
+          "email": "turtle73@gmail.com",
+          "role": 2
+        },
+        "comments": []
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "author": {
+      "id": 4,
+      "name": "unknown",
+      "email": "known@gmail.com",
+      "role": 1
+    },
+    "title": "Color",
+    "body": "What is your favourite color?",
+    "comments": []
+  },
+  {
+    "id": 4,
+    "author": {
+      "id": 3,
+      "name": "aNN6j73",
+      "email": "zero@gmail.com",
+      "role": 3
+    },
+    "title": "SSI",
+    "body": "Have you ever heard about SSI?",
+    "comments": [
+      {
+        "id": 0,
+        "body": "Best company in the world",
+        "author": {
+          "id": 0,
+          "name": "admin",
+          "email": "admin@admin.com",
+          "role": 0
+        },
+        "comments": [
+          {
+            "id": 1,
+            "body": "Yeah!",
+            "author": {
+              "id": 1,
+              "name": "spy007",
+              "email": "spy@seven.com",
+              "role": 1
+            },
+            "comments": []
+          },
+          {
+            "id": 2,
+            "body": "I love it!",
+            "author": {
+              "id": 6,
+              "name": "gordon",
+              "email": "freeman@freemail.hu",
+              "role": 1
+            },
+            "comments": [
+              {
+                "id": 3,
+                "body": "Me too!",
+                "author": {
+                  "id": 0,
+                  "name": "admin",
+                  "email": "admin@admin.com",
+                  "role": 0
+                },
+                "comments": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "body": "I wanna be an SSI-er",
+        "author": {
+          "id": 9,
+          "name": "zone",
+          "email": "zone41@gmail.com",
+          "role": 3
+        },
+        "comments": []
+      },
+      {
+        "id": 5,
+        "body": "OMG! IT IS AWESOME!",
+        "author": {
+          "id": 4,
+          "name": "unknown",
+          "email": "known@gmail.com",
+          "role": 1
+        },
+        "comments": []
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "author": {
+      "id": 2,
+      "name": "jozsi",
+      "email": "jozsef@freemail.hu",
+      "role": 1
+    },
+    "title": "Life",
+    "body": "What is the meaning of life?",
+    "comments": [
+      {
+        "id": 0,
+        "body": "42",
+        "author": {
+          "id": 5,
+          "name": "user",
+          "email": "superman@gmail.com",
+          "role": 1
+        },
+        "comments": []
+      },
+      {
+        "id": 1,
+        "body": "Rick Roll",
+        "author": {
+          "id": 8,
+          "name": "turtle73",
+          "email": "turtle73@gmail.com",
+          "role": 2
+        },
+        "comments": []
+      },
+      {
+        "id": 2,
+        "body": "Nyan cat",
+        "author": {
+          "id": 7,
+          "name": "nyanCat",
+          "email": "nyannyan@gmail.com",
+          "role": 2
+        },
+        "comments": []
+      }
+    ]
+  }
+]

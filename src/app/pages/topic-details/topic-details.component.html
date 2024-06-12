@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="topic-details">
+    <div class="comments-section">
+      <h4>Comments</h4>
+      <form [formGroup]="commentForm" (ngSubmit)="addComment()">
+        <div class="mb-3">
+          <label for="commentBody" class="form-label">Add Comment:</label>
+          <textarea id="commentBody" formControlName="body" class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!commentForm.valid">Add Comment</button>
+      </form>
+      <ul class="comments-list mt-3">
+        <ng-container *ngFor="let comment of topic?.comments">
+          <li class="comment-item">
+            <div class="comment-header d-flex justify-content-between">
+              <div>
+                <i class="fas fa-user"></i>
+                <span class="comment-author">{{ comment.author.name }}</span>
+                <span *ngIf="comment.comments.length > 0" class="reply-count">
+                  <button class="btn btn-link btn-sm" (click)="toggleComments(comment.id)">
+                    <i [class]="commentsVisibility[comment.id] ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                    {{ comment.comments.length }} replies
+                  </button>
+                </span>
+              </div>
+              <div>
+                <i *ngIf="canEditOwnComment || (canDeleteOthersComment && comment.author.id !== currentUser.id)" class="fas fa-edit ms-2" (click)="openEditCommentModal(comment, editCommentModal)" style="cursor: pointer;"></i>
+                <i *ngIf="canDeleteOwnComment || (canDeleteOthersComment && comment.author.id !== currentUser.id)" class="fas fa-trash ms-2" (click)="deleteComment(comment.id)" style="cursor: pointer;"></i>
+              </div>
+            </div>
+            <p>{{ comment.body }}</p>
+            <ul class="nested-comments">
+              <ng-container *ngFor="let nestedComment of comment.comments">
+                <li class="nested-comment-item">
+                  <div class="comment-header">
+                    <i class="fas fa-user"></i>
+                    <span class="comment-author">{{ nestedComment.author.name }}</span>
+                    <button class="btn btn-link btn-sm" (click)="toggleComments(nestedComment.id)">
+                      <i [class]="commentsVisibility[nestedComment.id] ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                    </button>
+                  </div>
+                  <p *ngIf="commentsVisibility[nestedComment.id]">{{ nestedComment.body }}</p>
+                </li>
+              </ng-container>
+            </ul>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+
+  <ng-template #editCommentModal let-modal>
+    <div class="modal-header">
+      <h5 class="modal-title" id="editCommentModalLabel">Edit Comment</h5>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="editCommentForm" (ngSubmit)="editComment(modal)">
+        <div class="mb-3">
+          <label for="editCommentBody" class="form-label">Body:</label>
+          <textarea id="editCommentBody" formControlName="body" class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!editCommentForm.valid">Save changes</button>
+      </form>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "name": "Administrators",
+    "rights": 15
+  },
+  {
+    "id": 1,
+    "name": "Guests",
+    "rights": 1
+  },
+  {
+    "id": 2,
+    "name": "Silver Users",
+    "rights": 3
+  },
+  {
+    "id": 3,
+    "name": "Gold Users",
+    "rights": 7
+  }
+]

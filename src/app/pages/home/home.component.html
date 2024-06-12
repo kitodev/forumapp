@@ -1,0 +1,66 @@
+<div class="container">
+  <h2>Topics</h2>
+  <ul class="list-group">
+    <li class="list-group-item mb-3" *ngFor="let topic of topics" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-between align-items-center flex-grow-1" (click)="viewTopic(topic.id)">
+          <h4>{{ topic.title }}</h4>
+          <div class="badge bg-secondary ms-3 me-3">
+            <i class="fas fa-comments"></i> {{ topic.comments.length }}
+          </div>
+        </div>
+        <div>
+          <i class="fas fa-chevron-down" (click)="viewTopic(topic.id)" style="cursor: pointer;"></i>
+          <i *ngIf="canEditOwnTopic || (canEditOthersTopic && topic.author.id !== currentUser.id)" class="fas fa-edit ms-2" (click)="openEditModal(topic, editTopicModal)" style="cursor: pointer;"></i>
+          <i *ngIf="canDeleteOwnTopic || (canDeleteOthersTopic && topic.author.id !== currentUser.id)" class="fas fa-trash ms-2" (click)="deleteTopic(topic.id)" style="cursor: pointer;"></i>
+        </div>
+      </div>
+      <p>{{ topic.body }}</p>
+      <div *ngIf="expandedTopicIds.includes(topic.id)">
+        <app-topic-details [topic]="topic"
+                           (editCommentEvent)="handleEditComment($event)"
+                           (deleteCommentEvent)="handleDeleteComment($event)">
+        </app-topic-details>
+      </div>
+    </li>
+  </ul>
+
+    <div class="mt-4">
+      <form [formGroup]="topicForm" (ngSubmit)="addTopic()">
+        <fieldset [disabled]="!canAddTopic">
+          <div class="mb-3">
+            <label for="title" class="form-label">Title:</label>
+            <input type="text" id="title" formControlName="title" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="body" class="form-label">Body:</label>
+            <textarea id="body" formControlName="body" class="form-control" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!topicForm.valid">Add Topic</button>
+        </fieldset>
+      </form>
+      <small *ngIf="!canAddTopic && loggedIn" class="text-danger">You don't have permission!</small>
+    </div>
+
+
+
+  <ng-template #editTopicModal let-modal>
+    <div class="modal-header">
+      <h5 class="modal-title" id="editTopicModalLabel">Edit Topic</h5>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="editTopicForm" (ngSubmit)="editTopic(modal)">
+        <div class="mb-3">
+          <label for="editTitle" class="form-label">Title:</label>
+          <input type="text" id="editTitle" formControlName="title" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="editBody" class="form-label">Body:</label>
+          <textarea id="editBody" formControlName="body" class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!editTopicForm.valid">Save changes</button>
+      </form>
+    </div>
+  </ng-template>
+</div>

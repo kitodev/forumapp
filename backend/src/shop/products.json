@@ -1,0 +1,170 @@
+[
+  {
+    "type": "CATEGORY",
+    "name": "house",
+    "children": [
+      {
+        "type": "CATEGORY",
+        "name": "garden",
+        "children": [
+          {
+            "type": "PRODUCT",
+            "id": 0,
+            "name": "lawn mower",
+            "price": 13500
+          },
+          {
+            "type": "PRODUCT",
+            "id": 1,
+            "name": "ladder",
+            "price": 5000
+          },
+          {
+            "type": "PRODUCT",
+            "id": 2,
+            "name": "sunbed",
+            "price": 11200
+          }
+        ]
+      },
+      {
+        "type": "CATEGORY",
+        "name": "kitchen",
+        "children": [
+          {
+            "type": "PRODUCT",
+            "id": 3,
+            "name": "knife",
+            "price": 1000
+          },
+          {
+            "type": "PRODUCT",
+            "id": 4,
+            "name": "spoon",
+            "price": 500
+          },
+          {
+            "type": "PRODUCT",
+            "id": 5,
+            "name": "plate",
+            "price": 1300
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "CATEGORY",
+    "name": "vehicles",
+    "children": [
+      {
+        "type": "PRODUCT",
+        "id": 6,
+        "name": "car",
+        "price": 4000000
+      },
+      {
+        "type": "PRODUCT",
+        "id": 7,
+        "name": "bicycle",
+        "price": 50000
+      }
+    ]
+  },
+  {
+    "type": "CATEGORY",
+    "name": "food",
+    "children": [
+      {
+        "type": "CATEGORY",
+        "name": "sweet",
+        "children": [
+          {
+            "type": "PRODUCT",
+            "id": 8,
+            "name": "bubblegum",
+            "price": 50
+          },
+          {
+            "type": "PRODUCT",
+            "id": 9,
+            "name": "lollipop",
+            "price": 60
+          }
+        ]
+      },
+      {
+        "type": "CATEGORY",
+        "name": "meat",
+        "children": [
+          {
+            "type": "CATEGORY",
+            "name": "chicken",
+            "children": [
+              {
+                "type": "PRODUCT",
+                "id": 10,
+                "name": "drumstick",
+                "price": 300
+              },
+              {
+                "type": "PRODUCT",
+                "id": 11,
+                "name": "pate",
+                "price": 200
+              }
+            ]
+          },
+          {
+            "type": "PRODUCT",
+            "id": 12,
+            "name": "lamb",
+            "price": 400
+          }
+        ]
+      },
+      {
+        "type": "CATEGORY",
+        "name": "vegetables",
+        "children": [
+          {
+            "type": "PRODUCT",
+            "id": 13,
+            "name": "onion",
+            "price": 200
+          },
+          {
+            "type": "PRODUCT",
+            "id": 14,
+            "name": "potato",
+            "price": 140
+          }
+        ]
+      },
+      {
+        "type": "PRODUCT",
+        "id": 15,
+        "name": "mineral water",
+        "price": 70
+      }
+    ]
+  },
+  {
+    "type": "CATEGORY",
+    "name": "other",
+    "children": [
+      {
+        "type": "PRODUCT",
+        "id": 16,
+        "name": "lamp",
+        "price": 3500
+      },
+      {
+        "type": "PRODUCT",
+        "id": 17,
+        "name": "sunglasses",
+        "price": 850
+      }
+    ]
+  }
+]

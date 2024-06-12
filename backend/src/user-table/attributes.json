@@ -1,0 +1,18 @@
+[
+  {
+    "key": "userId",
+    "type": "NUMBER"
+  },
+  {
+    "key": "name",
+    "type": "STRING"
+  },
+  {
+    "key": "email",
+    "type": "STRING"
+  },
+  {
+    "key": "city",
+    "type": "STRING"
+  }
+]

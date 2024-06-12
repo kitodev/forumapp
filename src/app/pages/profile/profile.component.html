@@ -1,0 +1,56 @@
+<div class="container">
+  <h2>Profile</h2>
+  <form [formGroup]="profileForm" (ngSubmit)="onUpdateProfile()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name:</label>
+      <input type="text" id="name" formControlName="name" class="form-control" [class.is-invalid]="profileForm.get('name')?.invalid && profileForm.get('name')?.touched">
+      <div class="invalid-feedback" *ngIf="profileForm.get('name')?.invalid && profileForm.get('name')?.touched">
+        Name must be at least 5 characters long.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" id="email" formControlName="email" class="form-control" [class.is-invalid]="profileForm.get('email')?.invalid && profileForm.get('email')?.touched">
+      <div class="invalid-feedback" *ngIf="profileForm.get('email')?.invalid && profileForm.get('email')?.touched">
+        Please enter a valid email address.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="profileForm.invalid">Update Profile</button>
+  </form>
+
+  <h3 class="mt-5">Change Password</h3>
+  <form [formGroup]="passwordForm" (ngSubmit)="onChangePassword()">
+    <div class="mb-3">
+      <label for="password1" class="form-label">New Password:</label>
+      <input type="password" id="password1" formControlName="password1" class="form-control" [class.is-invalid]="passwordForm.get('password1')?.invalid && passwordForm.get('password1')?.touched">
+      <div class="invalid-feedback" *ngIf="passwordForm.get('password1')?.invalid && passwordForm.get('password1')?.touched">
+        Password must be at least 8 characters long, contain an uppercase letter, a lowercase letter, and a digit.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password2" class="form-label">Confirm Password:</label>
+      <input type="password" id="password2" formControlName="password2" class="form-control" [class.is-invalid]="passwordForm.get('password2')?.invalid && passwordForm.get('password2')?.touched">
+      <div class="invalid-feedback" *ngIf="passwordForm.errors?.['mismatch'] && passwordForm.get('password2')?.touched">
+        Passwords do not match.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="passwordForm.invalid">Change Password</button>
+  </form>
+
+  <h3 class="mt-5">Role and Permissions</h3>
+  <p><strong>Role:</strong> {{ role?.name }}</p>
+  <ul class="list-group">
+    <li class="list-group-item" [class.text-success]="permissions.readComments" [class.text-danger]="!permissions.readComments">
+      Read Comments
+    </li>
+    <li class="list-group-item" [class.text-success]="permissions.addDeleteComments" [class.text-danger]="!permissions.addDeleteComments">
+      Add/Delete Comments
+    </li>
+    <li class="list-group-item" [class.text-success]="permissions.addDeleteTopics" [class.text-danger]="!permissions.addDeleteTopics">
+      Add/Delete Topics
+    </li>
+    <li class="list-group-item" [class.text-success]="permissions.deleteOthersCommentsTopics" [class.text-danger]="!permissions.deleteOthersCommentsTopics">
+      Delete Others' Comments/Topics
+    </li>
+  </ul>
+</div>

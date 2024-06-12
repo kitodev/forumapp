@@ -1,0 +1,61 @@
+<div class="container">
+  <h2>Admin Page</h2>
+
+  <div class="mb-3">
+    <label for="roleSelector" class="form-label">Select Role:</label>
+    <select id="roleSelector" class="form-select" (change)="selectRole($event)">
+      <option *ngFor="let role of roles" [value]="role.id">{{ role.name }}</option>
+    </select>
+  </div>
+
+  <div *ngIf="selectedRole">
+    <div class="mb-3">
+      <label for="roleName" class="form-label">Role Name:</label>
+      <input id="roleName" class="form-control" [(ngModel)]="roleName">
+    </div>
+
+    <div class="mb-3">
+      <label>Permissions:</label>
+      <div *ngFor="let perm of rolePermissions | keyvalue">
+        <input type="checkbox" [checked]="permissions[perm.key]" (change)="onPermissionChange($event, perm.key)"> {{ perm.value }}
+      </div>
+    </div>
+
+    <button class="btn btn-primary" (click)="updateRole()">Update Role</button>
+
+    <h3 class="mt-5">Manage Users</h3>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Users with selected role</h4>
+        <div
+          cdkDropList
+          id="usersWithRoleList"
+          [cdkDropListData]="usersWithRole"
+          class="list-group"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <div *ngFor="let user of usersWithRole" class="list-group-item" cdkDrag>
+            {{ user.name }} (ID: {{ user.id }})
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <h4>Other Users</h4>
+        <div
+          cdkDropList
+          id="otherUsersList"
+          [cdkDropListData]="otherUsers"
+          class="list-group"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <div *ngFor="let user of otherUsers" class="list-group-item" cdkDrag>
+            {{ user.name }} (ID: {{ user.id }})
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

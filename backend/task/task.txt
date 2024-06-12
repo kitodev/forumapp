@@ -1,0 +1,75 @@
+#General description
+
+Your task is to create a forum where users can create and delete topics and comments. You need to implement 3 pages. You will encounter users with 4 different roles on the site, and their permissions are stored in a binary format, where each bit represents whether a specific role has a particular permission. Here are the details:
+
+Roles with their corresponding IDs:
+• Administrators (0)
+• Guests (1)
+• Silver users (2)
+• Gold users (3)
+
+Permissions:
+• Read comments (1)
+• Add/delete comments (2)
+• Add/delete topics (4)
+• Delete others' comments/topics (8)
+
+Here is the breakdown of permissions for each role:
+
+
+| Role     | Read Comments | Add/Delete Comments | Add/Delete Topics | Delete Others' Comments/Topics |
+|----------|---------------|---------------------|-------------------|--------------------------------|
+| Guest    |      X        |                     |                   |                                |
+| Silver   |      X        |          X          |                   |                                |
+| Gold     |      X        |          X          |        X          |                                |
+| Admin    |      X        |          X          |        X          |              X                 |
+
+
+You can access or modify the data through the interviewServer, and you can also add new objects to it. The modifications made on the server are stored in memory as long as the server is running, so the data remains accessible during that time. The server starts with pre-initialized objects.
+
+## Interview Server endpoints:
+- GET /api/users
+- GET /api/user/:id
+- PUT /api/user/:id
+- PUT /api/user/:id/password (parameters: password1, password2)
+- GET /api/roles
+- GET /api/role/:id
+- PUT /api/role/:id
+- GET /api/role/:id/users
+- GET /api/topics
+- POST /api/topic/add
+- GET /api/topic/:id
+- PUT /api/topic/:id
+- DELETE /api/topic/:id
+- POST /api/topic/:id/comment/add
+- PUT /api/topic/:topicId/comment/:commentId
+- DELETE /api/topic/:topicId/comment/:commentId
+- POST /api/topic/:topicId/comment/:commentId/add
+
+## Requirements
+
+1. Profile Page
+   1.1. Form for changing user data with validation:
+      - Name (minimum 5 characters)
+      - Email
+      - Password (minimum 8 characters, at least 1 uppercase letter, at least 1 lowercase letter, at least 1 digit, 2 fields to confirm that the passwords match)
+      - Important: There is a separate endpoint for changing the password.
+   1.2. Display the role name and all permissions. Highlight the permissions that the role has in green, and the rest in red.
+   1.3. Display the number of comments and topics the user has written.
+
+2. Homepage
+   2.1. Display all topics in a list.
+   2.2. At the bottom of the page, display a form to add a new topic. Only non-empty topics can be created.
+   2.3. Clicking on a topic should expand and display its associated comments.
+   2.4. It should be possible to add new comments to both topics and existing comments. The content of comments cannot be empty.
+   2.5. Since comments can have nested comments, display them in a tree structure.
+   2.6. When deleting a comment, it should be visually indicated as removed. The comment will have a "removed" property set to true (handled by the server).
+
+3. Admin Page
+   3.1. At the top of the page, display a role selector menu to choose the role to be edited.
+   3.2. In the first dropdown section, allow modification of the role name and associated permissions.
+   3.3. In the second dropdown section, display two lists. The first list contains users assigned to the selected role, while the second list contains other users. Include two buttons between the lists to add or remove users from the selected role. Implement drag and drop functionality for adding users to the current role.
+   3.4. Allow sorting of users in both lists by name and ID. The visual representation is not provided, so you have flexibility in implementing it.
+
+4. Menu (bonus)
+   4.1. Create a menu that allows toggling between pages.

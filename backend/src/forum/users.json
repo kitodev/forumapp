@@ -1,0 +1,72 @@
+[
+  {
+    "id": 0,
+    "name": "admin",
+    "password": "LqmSEM22VLngyjQp",
+    "email": "admin@admin.com",
+    "role": 0
+  },
+  {
+    "id": 1,
+    "name": "spy007",
+    "password": "Ickf8WRur7UyPVGW",
+    "email": "spy@seven.com",
+    "role": 1
+  },
+  {
+    "id": 2,
+    "name": "jozsi",
+    "password": "hfWCQjSVnKx2SFsi",
+    "email": "jozsef@freemail.hu",
+    "role": 1
+  },
+  {
+    "id": 3,
+    "name": "aNN6j73",
+    "password": "PiGlknL4EBsfLZqB",
+    "email": "zero@gmail.com",
+    "role": 3
+  },
+  {
+    "id": 4,
+    "name": "unknown",
+    "password": "nPMmdhQmOt9z3Ygk",
+    "email": "known@gmail.com",
+    "role": 1
+  },
+  {
+    "id": 5,
+    "name": "user",
+    "password": "g7r77Nd9lqFEuXun",
+    "email": "superman@gmail.com",
+    "role": 1
+  },
+  {
+    "id": 6,
+    "name": "gordon",
+    "password": "QTB2UBcj1nhXHIqv",
+    "email": "freeman@freemail.hu",
+    "role": 1
+  },
+  {
+    "id": 7,
+    "name": "nyanCat",
+    "password": "JT0RtuZAzCw1zojk",
+    "email": "nyannyan@gmail.com",
+    "role": 2
+  },
+  {
+    "id": 8,
+    "name": "turtle73",
+    "password": "FLousg3xBIIBShTE",
+    "email": "turtle73@gmail.com",
+    "role": 2
+  },
+  {
+    "id": 9,
+    "name": "zone",
+    "password": "F7USmhR7jd1tkMU3",
+    "email": "zone41@gmail.com",
+    "role": 3
+  }
+]

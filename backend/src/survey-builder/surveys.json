@@ -1,0 +1,21 @@
+[
+  {
+    "description": "This is an example survey",
+    "id": 0,
+    "name": "Example survey",
+    "questions": [
+      {
+        "finish": [],
+        "id": 0
+      },
+      {
+        "finish": [5, 6],
+        "id": 1
+      },
+      {
+        "finish": [],
+        "id": 2
+      }
+    ]
+  }
+]
